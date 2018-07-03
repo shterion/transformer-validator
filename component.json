@@ -4,8 +4,16 @@
   "actions": {
     "validatePerson": {
       "title": "Valdiate person",
-      "description": "Validate transformer output",
+      "description": "Validate transformer person output",
       "main": "./lib/actions/validatePerson.js",
+      "metadata": {
+        "out": {}
+      }
+    },
+    "validatePerson": {
+      "title": "Valdiate organization",
+      "description": "Validate transformer organization output",
+      "main": "./lib/actions/validateOrganization.js",
       "metadata": {
         "out": {}
       }
