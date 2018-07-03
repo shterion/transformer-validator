@@ -23,7 +23,7 @@
      },
      "description": "Each application record maps the OIH data record to a corresponding record in an application or service which is integrated via the OIH.",
      "minItems": 1
-   },
+   }
  },
  "required": [
    "oihApplicationRecords"
