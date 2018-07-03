@@ -1,0 +1,16 @@
+{
+  "name": "validator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "validator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "ajv": "^6.5.2",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2"
+  }
+}
