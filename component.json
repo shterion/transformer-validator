@@ -10,7 +10,7 @@
         "out": {}
       }
     },
-    "validatePerson": {
+    "validateOrganization": {
       "title": "Valdiate organization",
       "description": "Validate transformer organization output",
       "main": "./lib/actions/validateOrganization.js",
