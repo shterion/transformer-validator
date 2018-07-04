@@ -1,6 +1,6 @@
 {
   "title": "Transformation Validator",
-  "description": "Generic Data Transformation Component",
+  "description": "Validate the incoming data from the transformation component",
   "actions": {
     "validatePerson": {
       "title": "Valdiate person",
