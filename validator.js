@@ -1,6 +1,9 @@
 "use strict";
 const request = require('request-promise');
 const Ajv = require('ajv');
+const person = require('./schemas/addresses/personsV2.json');
+const sharedDefinitions = require('./schemas/addresses/sharedDefinitionsV2.json');
+const record = require('./schemas/addresses/oih-data-record.json');
 
 (async function getSchema(){
   const data = {
@@ -54,11 +57,11 @@ const Ajv = require('ajv');
         "type": "xing"
       }
     ],
-    "address": [
+    "addresses": [
       {
         "description": "",
         "primaryContact": "",
-        "country": 5,
+        "country": "DE",
         "region": "",
         "district": "",
         "city": "null",
@@ -91,28 +94,11 @@ const Ajv = require('ajv');
   };
 
   try {
-    const options = {
-      uri: 'https://raw.githubusercontent.com/openintegrationhub/Data-and-Domain-Models/master/src/main/schema/addresses/personV2.json',
-      json: true
-    };
-    const optionsSharedDef = {
-      uri: 'https://raw.githubusercontent.com/openintegrationhub/Data-and-Domain-Models/master/src/main/schema/addresses/sharedDefinitionsV2.json',
-      json: true
-    };
-    const optionsRecord = {
-      uri: 'https://raw.githubusercontent.com/openintegrationhub/Data-and-Domain-Models/master/src/main/schema/oih-data-record.json',
-      json: true
-    };
-
-    const person = await request.get(options);
-    const sharedDefinitions = await request.get(optionsSharedDef);
-    const record = await request.get(optionsRecord);
-
     let ajv = new Ajv();
     let validate = ajv.addSchema(sharedDefinitions).addSchema(record).compile(person);
     let valid = validate(data);
 
-    (!valid) ? console.log(validate.errors) : console.log('Validation successful');
+    (!valid) ? console.log(validate.errors) : console.log('Validation successful!');
   } catch (e) {
     throw new Error(e);
   }
