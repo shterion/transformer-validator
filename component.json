@@ -1,0 +1,22 @@
+{
+  "title": "Transformation Validator",
+  "description": "Validate the incoming data from the transformation component",
+  "actions": {
+    "validatePerson": {
+      "title": "Valdiate person",
+      "description": "Validate transformer person output",
+      "main": "./lib/actions/validatePerson.js",
+      "metadata": {
+        "out": {}
+      }
+    },
+    "validateOrganization": {
+      "title": "Valdiate organization",
+      "description": "Validate transformer organization output",
+      "main": "./lib/actions/validateOrganization.js",
+      "metadata": {
+        "out": {}
+      }
+    }
+  }
+}
